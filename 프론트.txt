@@ -1,0 +1,103 @@
+1.프론트 관련된 html과 각각 기능들을 들어갈 수 있게 버튼 5개를 구성해서 했음 각 버튼당 URL을 연결시게해서 들어가게 했음
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cybersecurity Simulation Control Panel</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #b92b27, #1565C0);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            color: white;
+            font-family: Arial, sans-serif;
+            padding-top: 2%;
+        }
+        h1 {
+            font-size: 4.5em; 
+            position: absolute;
+            top: 0;
+            padding: 20px;
+            width: 100%;
+            text-align: center;
+        }
+        .btn-container {
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+            flex-wrap: wrap;
+            margin-top: -1cm;
+        }
+        .btn {
+            width: 150px; 
+            height: 150px; 
+            margin: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            position: relative;
+            box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+            transition: all 0.5s;
+            background: linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%);
+            text-decoration: none;
+        }
+        .btn:hover {
+            background: linear-gradient(45deg, #FE6B8B 70%, #FF8E53 100%);
+        }
+        .btn:active {
+            transform: scale(0.95);
+        }
+        .btn-text {
+            color: white;
+            text-align: center;
+            font-size: 1.5em;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cyber Range Platform</h1>
+
+    <div class="btn-container">
+        <a href="http://192.168.56.144:8080/guacamole/#/" target="_blank" class="btn">
+            <span class="btn-text">Master</span>
+        </a>
+        <a href="http://guacamole-instance.com/#/client/attacker" target="_blank" class="btn">
+            <span class="btn-text">Attacker</span>
+        </a>
+        <a href="http://192.168.56.151:8080/guacamole/#/" target="_blank" class="btn">
+            <span class="btn-text">Defender</span>
+        </a>
+        <a href="http://guacamole-instance.com/#/client/supervisor" target="_blank" class="btn">
+            <span class="btn-text">Supervisor</span>
+        </a>
+        <a href="http://192.168.56.104:5601" target="_blank" class="btn">
+            <span class="btn-text">ELK</span>
+        </a>
+    </div
+
+
+
+
+2. server.js
+node.js 부분 연결 
+html을 웹서버에 올리는과정
+var express = require('express');
+var app = express();
+var path = require('path');
+
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname + '/cyber.html'));
+});
+
+app.listen(3000, function () {
+  console.log('App is listening on port 3000!');
+});
+
+    
