@@ -1,80 +1,121 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Cybersecurity Simulation Control Panel</title>
     <style>
         body {
-            background: linear-gradient(to right, #b92b27, #1565C0);
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             height: 100vh;
             margin: 0;
-            color: white;
             font-family: Arial, sans-serif;
-            padding-top: 2%;
+            overflow: hidden;
+            transform: scale(0.7);
         }
-        h1 {
-            font-size: 4.5em; 
-            position: absolute;
-            top: 0;
-            padding: 20px;
-            width: 100%;
+
+        .top-section {
+            background-color: #8a6d5c;
+            padding: 150px 100px;
+            width: 150%;
             text-align: center;
         }
+
+        .bottom-section {
+            background-color: white;
+            width: 100%;
+            padding: 50px 100px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 4.5em;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .description {
+            max-width: 80%;
+            color: #2d2d2d;
+            margin: 70px auto;
+            font-size: 1.4em;
+        }
+
         .btn-container {
             display: flex;
-            justify-content: space-between;
-            width: 80%;
-            flex-wrap: wrap;
-            margin-top: -1cm;
+            justify-content: center;
+            width: 100%;
+            margin: 20px 0;
         }
+
         .btn {
-            width: 150px; 
-            height: 150px; 
-            margin: 20px;
+            width: 180px;
+            height: 200px;
+            margin: 50px;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 50%;
-            position: relative;
-            box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+            box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
             transition: all 0.5s;
-            background: linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%);
+            background: ivory;
             text-decoration: none;
+            color: #2d2d2d;
         }
+
         .btn:hover {
-            background: linear-gradient(45deg, #FE6B8B 70%, #FF8E53 100%);
+            background: #FFFACD;
         }
+
         .btn:active {
             transform: scale(0.95);
         }
+
         .btn-text {
-            color: white;
             text-align: center;
-            font-size: 1.5em;
-            text-decoration: none;
+            font-size: 2em;
+        }
+
+        footer {
+            color: #2d2d2d;
+            font-size: 0.9em;
+            padding-top: 20px;
         }
     </style>
 </head>
-<body>
-    <h1>Cyber Range Platform</h1>
 
-    <div class="btn-container">
-        <a href="http://192.168.56.144:8080/guacamole/#/" target="_blank" class="btn">
-            <span class="btn-text">Master</span>
-        </a>
-        <a href="http://guacamole-instance.com/#/client/attacker" target="_blank" class="btn">
-            <span class="btn-text">Attacker</span>
-        </a>
-        <a href="http://192.168.56.151:8080/guacamole/#/" target="_blank" class="btn">
-            <span class="btn-text">Defender</span>
-        </a>
-        <a href="http://guacamole-instance.com/#/client/supervisor" target="_blank" class="btn">
-            <span class="btn-text">Supervisor</span>
-        </a>
-        <a href="http://192.168.56.104:5601" target="_blank" class="btn">
-            <span class="btn-text">ELK</span>
-        </a>
-    </div
+<body>
+    <div class="top-section">
+        <h1>Cyber Range Platform</h1>
+        <div class="description">
+                This site is a platform for cyber security simulations. <br>Here, you can practice attack and defense through various scenarios and monitor them in real time.
+        </div>
+    </div>
+
+    <div class="bottom-section">
+        <div class="btn-container">
+            <a href="#remoteURL" target="http://129.153.136.98:8080/guacamole/#/" class="btn">
+                <span class="btn-text">Remote</span>
+            </a>
+            <a href="#settingURL" target="http://150.136.168.151/" class="btn">
+                <span class="btn-text">Setting</span>
+            </a>
+            <a href="#elkURL" target="http://203.252.240.211:5601/app/home#/" class="btn">
+                <span class="btn-text">ELK</span>
+            </a>
+            <a href="#cloudURL" target="https://cloud.oracle.com/?region=us-ashburn-1" class="btn">
+                <span class="btn-text">Cloud</span>
+            </a>
+        </div>
+
+        <footer>
+            &copy; 2023 Cyber Range  Platform. All rights reserved.
+        </footer>
+    </div>
+</body>
+</html>
